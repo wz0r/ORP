@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-# All classes have the smae base class: object
+# All classes have the same base class: object
 
 class Test:
     pass

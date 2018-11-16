@@ -15,9 +15,9 @@ class Car:
         # HERE ENGINE AND TRANSMISSION COMPAT CHECK
 
 
-t = TestClass()
+t = Car('red')
 
-t1 = TestClass()
+t1 = Car('white')
 
 
 # Constructor can have parameters
@@ -29,6 +29,7 @@ class Table:
 
 
 t = Table(4)
+
 t1 = Table(3)
 
 
