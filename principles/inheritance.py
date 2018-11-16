@@ -42,6 +42,9 @@ class CalcExtraValue(Calc):
     def calc_value(self):
         return self.num / 100
 
+    def print_number(self, values_to_print):
+        print('Number is Extra', values_to_print)
+
 
 c = Calc(3)
 
