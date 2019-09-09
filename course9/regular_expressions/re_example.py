@@ -11,6 +11,6 @@ if __name__ == '__main__':
     print('is name:', bool(is_name))
 
     name_pattern_group = r'My name is (.*)\.'
-    name = re.findall(name_pattern_group, 'My name is Dmitry')
+    name = re.findall(name_pattern_group, 'My name is Dmitry.')
     print(name)
 
