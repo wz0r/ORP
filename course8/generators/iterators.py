@@ -1,4 +1,6 @@
+#!/usr/bin/env/python3
 # -*- coding: utf-8 -*-
+
 
 x = iter([1, 2, 3])
 
