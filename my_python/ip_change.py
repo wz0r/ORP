@@ -19,3 +19,4 @@ def wr_file(filename):
 
 if __name__ == '__main__':
     open_files('ip.txt')
+    print(len(z_list))

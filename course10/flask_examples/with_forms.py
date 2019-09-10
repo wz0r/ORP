@@ -15,8 +15,9 @@ class ContactForm(FlaskForm):
         validators.Email()
     ])
     job = StringField(label='JOB', validators=[
+        validators.AnyOf('it', 'bank'),
         validators.Length(min=1, max=35),
-        validators.Optional()
+        #validators.Optional()
     ])
 
 
