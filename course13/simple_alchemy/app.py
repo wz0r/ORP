@@ -29,9 +29,9 @@ class Person(db.Model):
     job = db.Column(db.String(50))
 
     def __str__(self):
-        return("<Person id - {}>".format(self.id))
+        return "<Person id - {}>".format(self.id)
 
-    def to_dict(self):
+    def to_json(self):
         return {
             'id': self.id,
             'name': self.name,
@@ -56,15 +56,14 @@ def index():
         sub, sub.c.min_age == Person.age
     ).first()
 
-    return jsonify([p.to_dict() for p in people])
-    #     jsonify({
-    #     'people': [p.to_json() for p in people],
-    #     'by_name': by_name.to_json(),
-    #     'by_age': [p.to_json() for p in by_age],
-    #     'by_job': [p.to_json() for p in by_job],
-    #
-    #     'youngest': youngest.to_json(),
-    # })
+    #return jsonify([p.to_dict() for p in people])
+    return jsonify({
+         'people': [p.to_json() for p in people],
+         'by_name': by_name.to_json(),
+         'by_age': [p.to_json() for p in by_age],
+         'by_job': [p.to_json() for p in by_job],
+         'youngest': youngest.to_json(),
+     })
 
 
 if __name__ == '__main__':

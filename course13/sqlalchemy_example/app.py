@@ -3,7 +3,7 @@
 from flask import Flask, request, render_template, flash
 from flask_sqlalchemy import SQLAlchemy
 
-import sqlalchemy_example.config as config
+import config as config
 
 
 app = Flask(__name__, template_folder='templates')
@@ -15,8 +15,8 @@ db = SQLAlchemy(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    from sqlalchemy_example.models import Post, User
-    from sqlalchemy_example.forms import PostForm
+    from models import Post, User
+    from forms import PostForm
 
     if request.method == 'POST':
         print(request.form)
@@ -33,8 +33,8 @@ def index():
             flash(str(form.errors))
 
     posts = Post.query.all()
-    user = User.query.filter(id = posts[0].user_id)
-    user = posts[0].user
+    # user = User.query.filter(id=posts[0].user_id)
+    # user = posts[0].user
 
     for post in posts:
         user_id = post.user_id
@@ -56,7 +56,7 @@ def populate_db():
 
 
 if __name__ == '__main__':
-    from sqlalchemy_example.models import *
+    from models import *
     db.create_all()
 
     if User.query.count() == 0:

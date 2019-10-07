@@ -66,8 +66,8 @@ def index():
             return str(form.errors)
     else:
         cur.execute(
-            # """SELECT * from public.observations;"""
-            """SELECT * from public.observations LIMIT 2;"""
+             """SELECT * from public.observations;"""
+            # """SELECT * from public.observations LIMIT 2;"""
             # """SELECT id from public.observations LIMIT 10;"""
             # """SELECT id from public.observations ORDER BY id DESC LIMIT 10 ;"""
         )

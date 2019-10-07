@@ -2,7 +2,7 @@
 
 from datetime import date
 
-from sqlalchemy_example.app import db
+from app import db
 
 
 class User(db.Model):
@@ -30,6 +30,7 @@ class Post(db.Model):
 
     date_created = db.Column(db.Date, default=date.today)
     is_visible = db.Column(db.Boolean, default=True, nullable=False)
+    # is_visible = db.Column(db.Boolean, default=True)
 
     def __str__(self):
         return '<Post %r, user_id %s>'.format(self.title, self.user_id)
